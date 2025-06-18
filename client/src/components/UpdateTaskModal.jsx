@@ -39,7 +39,7 @@ const UpdateTaskModal = ({
   const handleUpdateTask = async () => {
     await axios
       .put(
-        `http://localhost:8000/api/v1/task/update/${id}`,
+        `https://diploy-task-app-api.vercel.app/api/v1/task/update/${id}`,
         {
           title,
           description,
