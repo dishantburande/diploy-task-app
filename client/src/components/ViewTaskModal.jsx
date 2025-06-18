@@ -8,7 +8,7 @@ const ViewTaskModel = ({ handleViewModalClose, showViewModal, id}) => {
 
   useEffect(()=>{
     const getSingleTask  = async()=>{
-      await axios.get(`http://localhost:8000/api/v1/task/single/${id}`, { withCredentials: true, }).then((res)=> setTask(res.data.task)
+      await axios.get(`https://diploy-task-app-api.vercel.app/api/v1/task/single/${id}`, { withCredentials: true, }).then((res)=> setTask(res.data.task)
     ).catch((error)=> {
       console.log(error.response.data.message)
     })
