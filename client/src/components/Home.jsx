@@ -19,7 +19,7 @@ const Home = ({ task,setTask, isAuthenticated, taskType}) => {
   const [updatedTaskId, setUpdateTaskId] = useState(null)
 
   const deleteTask = async(id)=>{
-await axios.delete(`http://localhost:8000/api/v1/task/delete/${id}`, { withCredentials: true, }).then((res)=> {
+await axios.delete(`https://diploy-task-app-api.vercel.app/api/v1/task/delete/${id}`, { withCredentials: true, }).then((res)=> {
   toast.success(res.data.message);
   setTask((prevTask) => prevTask.filter((task) => task._id !== id));
 }).catch((error)=>{

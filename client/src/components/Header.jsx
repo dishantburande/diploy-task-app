@@ -1,4 +1,5 @@
 
+
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
@@ -23,7 +24,7 @@ function Header({ setTask, setIsAuthenticated, isAuthenticated, setTaskType }) {
   const fetchTasks = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/v1/task/mytask",
+        "https://diploy-task-app-api.vercel.app/api/v1/task/mytask",
         { withCredentials: true }
       );
       setAllTask(response.data.tasks);
@@ -40,7 +41,7 @@ function Header({ setTask, setIsAuthenticated, isAuthenticated, setTaskType }) {
   const handleLogout = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8000/api/v1/user/logout",
+        "https://diploy-task-app-api.vercel.app/api/v1/user/logout",
         { withCredentials: "true" }
       );
       toast.success(data.message);
