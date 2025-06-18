@@ -18,7 +18,7 @@ const UpdateTaskModal = ({
   useEffect(() => {
     const getSingleTask = async () => {
       await axios
-        .get(`http://localhost:8000/api/v1/task/single/${id}`, {
+        .get(`https://diploy-task-app-api.vercel.app/api/v1/task/single/${id}`, {
           withCredentials: true,
         })
         .then((res) => {
