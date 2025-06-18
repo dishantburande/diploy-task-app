@@ -12,7 +12,7 @@ const Login = ({setIsAuthenticated, isAuthenticated}) => {
 
   const handleLogin = async(e)=>{
     e.preventDefault();
-    axios.post("https://diploy-task-app-api.vercel.app/api/v1/user/login", {email, password}, {withCredentials: true, headers: {"Content-Type": "application/json"}}).then((res)=>{
+    const res = await axios.post("https://diploy-task-app-api.vercel.app/api/v1/user/login", {email, password}, {withCredentials: true, headers: {"Content-Type": "application/json"}}).then((res)=>{
       setEmail("");
       setPassword("");
       setIsAuthenticated(true);
